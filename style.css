@@ -1,0 +1,243 @@
+* /* Base Styles & Animations from your snippet */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, white, transparent),
+    radial-gradient(2px 2px at 80px 120px, white, transparent),
+    radial-gradient(1px 1px at 200px 80px, white, transparent),
+    radial-gradient(2px 2px at 300px 200px, white, transparent);
+  background-size: 400px 400px;
+  animation: moveStars 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-400px); }
+}
+
+/* Game Panel */
+.game-container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  background: rgba(10, 15, 30, 0.95);
+  border: 1px solid rgba(0, 150, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 100, 255, 0.2);
+  text-align: center;
+
+  display: none;
+}
+.hide {
+  display: none;
+}
+.unhide {
+  display: block;
+}
+.start-container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  background: rgba(10, 15, 30, 0.95);
+  border: 1px solid rgba(0, 150, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 100, 255, 0.2);
+  text-align: center;
+}
+.results-container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  background: rgba(10, 15, 30, 0.95);
+  border: 1px solid rgba(0, 150, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 100, 255, 0.2);
+  text-align: center;
+  /* display: none; */
+}
+
+.game-header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #7ecbff;
+}
+
+/* Timer Bar */
+.timer-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.timer-bar {
+  width: 100%;
+  height: 100%;
+  background: #00d4ff;
+  transition: width 0.1s linear;
+}
+
+/* Question Section */
+.question-panel h2 {
+  font-size: 1.2rem;
+  color: #7ecbff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+#hintText {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+/* Grid for Buttons */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.option-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-btn:hover {
+  background: rgba(0, 212, 255, 0.2);
+  border-color: #00d4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.option-btn:active {
+  transform: translateY(0);
+}
+
+.feedback-msg {
+  margin-top: 25px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #00d4ff;
+  opacity: 0.7;
+}
+
+/* JS Utility Classes */
+.correct { background: #22c55e !important; border-color: #22c55e !important; }
+.wrong { background: #ef4444 !important; border-color: #ef4444 !important; }
+
+/* Start Button */
+.reg-btn {
+  margin-top: 10px;
+  background: linear-gradient(135deg, #00d4ff, #0077ff);
+  border: none;
+  padding: 14px 22px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.35);
+}
+
+.reg-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 25px rgba(0, 212, 255, 0.6);
+}
+
+.reg-btn:active {
+  transform: translateY(0);
+}
+
+/* Results Panel Animation */
+.results-container {
+  animation: fadeIn 0.35s ease;
+}
+
+/* Result Message (Correct / Wrong) */
+.result {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* Correct / Wrong Colors */
+.result.correct-text {
+  color: #22c55e;
+}
+
+.result.wrong-text {
+  color: #ef4444;
+}
+
+/* Actual Answer Text */
+.actual {
+  font-size: 0.95rem;
+  color: #7ecbff;
+  opacity: 0.85;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+.message {
+  font-size: 0.95rem;
+  color: #7ecbff;
+  opacity: 0.85;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BenQuadrinardle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="stars"></div>
+  <div class="start-container">
+    <div>Welcome to BenQuadrinardle, the daily puzzle game.</div>
+    <br>
+    <div>Every day, you will be presented with four names. Three of them are randomly generated, and one of them is a real obscure Star Wars character.</div>
+    <br>
+    <div>Your goal is to select the real one.</div>
+    <br>
+    <button type="button" class="reg-btn" id="startBtn">Lets Go</button>
+  </div>
+  <main class="game-container">
+    <section class="question-panel">
+      <h2 id="promptText">Which of these is a real Star Wars character:</h2>
+    </section>
+
+    <div class="options-grid">
+      <button type="button" class="option-btn" value="0">.</button>
+      <button type="button" class="option-btn" value="1">.</button>
+      <button type="button" class="option-btn" value="2">.</button>
+      <button type="button" class="option-btn" value="3">.</button>
+    </div>
+
+  </main>
+  <div class="results-container hide">
+    <div class="result"></div>
+    <div class="actual"></div>
+    <br>
+    <div class="message">Visit again tomorrow for a new question!</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
