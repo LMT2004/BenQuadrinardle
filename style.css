@@ -144,13 +144,15 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-
+@media screen and (min-width: 768px) {
 .option-btn:hover {
   background: rgba(0, 212, 255, 0.2);
   border-color: #00d4ff;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
 }
+  }
+
 
 .option-btn:active {
   transform: translateY(0);
