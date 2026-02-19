@@ -243,3 +243,8 @@ body {
     transform: translateY(0) scale(1);
   }
 }
+body {
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 120px;
+}
