@@ -1,6 +1,6 @@
 let todayPuzzle = null;
 async function loadDailyNames() {
-  const startDate = new Date("2026-02-16");
+  const startDate = new Date("2026-02-19");
   const today = new Date();
 
   startDate.setHours(0, 0, 0, 0);
